@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import Seat from "../Seat/Seat";
 
 const ROWS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
 const COLS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -55,8 +56,7 @@ const SeatSelector = ({
               <td>{row}</td>
               {COLS.map((col, colIndex) => (
                 <td key={rowIndex + colIndex}>
-                  <input
-                    type="checkbox"
+                  <Seat
                     value={row + col}
                     disabled={!isSelecting || selectedSeats.has(row + col)}
                     checked={
